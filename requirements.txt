@@ -1,0 +1,19 @@
+# trust_engine core (Milestone 1)
+scipy>=1.11
+
+# simulation harness (Milestone 2)
+matplotlib>=3.8
+
+# workflow layer: connectors, draft agent, LLM backends, executor (Milestone 3)
+requests>=2.31
+pydantic>=2.9
+anthropic>=0.40
+openai>=1.50
+
+# API layer (Milestone 4)
+fastapi>=0.115
+uvicorn>=0.30
+
+# testing (all milestones) — httpx is FastAPI TestClient's transport
+pytest>=7.0
+httpx>=0.27

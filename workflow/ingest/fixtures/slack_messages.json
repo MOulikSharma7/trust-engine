@@ -1,0 +1,27 @@
+[
+  {
+    "user": "U01ALICE",
+    "text": "Standup: finished the payments retry logic, PR is up for review. Blocked on getting a sandbox key from the vendor.",
+    "ts": "1723800000.000100"
+  },
+  {
+    "user": "U02BOB",
+    "text": "Standup: nothing new to report, still waiting on design sign-off before I can start the checkout redesign.",
+    "ts": "1723800120.000200"
+  },
+  {
+    "user": "U03CARL",
+    "text": "Standup: delivery-date sync job is failing intermittently for orders placed near midnight UTC, investigating today.",
+    "ts": "1723800240.000300"
+  },
+  {
+    "user": "U01ALICE",
+    "text": "Heads up — the payments ticket from last week (#4821) still hasn't gotten a response from the customer, might need to escalate.",
+    "ts": "1723800360.000400"
+  },
+  {
+    "user": "U04DIANA",
+    "text": "Standup: onboarding docs update is done and merged. Picking up the stale-PR cleanup next.",
+    "ts": "1723800480.000500"
+  }
+]

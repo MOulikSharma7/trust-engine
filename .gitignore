@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local SQLite dev database (Milestone 2) — never commit local state.
+trust_engine/local.db

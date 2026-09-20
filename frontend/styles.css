@@ -1,0 +1,183 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --border: #2a2e37;
+  --text: #e6e8eb;
+  --muted: #9aa1ac;
+  --accent: #5b8def;
+  --good: #4caf7d;
+  --bad: #d9645a;
+  --warn: #d9a54a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 24px 32px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 { margin: 0; font-size: 1.5rem; }
+.subtitle { color: var(--muted); margin: 4px 0 16px; font-size: 0.9rem; }
+
+main {
+  padding: 24px 32px 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+h2 { margin: 0; font-size: 1.1rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; }
+
+td.empty { color: var(--muted); text-align: center; padding: 20px; }
+
+.tier-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.tier-AUTO { background: rgba(76, 175, 125, 0.18); color: var(--good); }
+.tier-APPROVE { background: rgba(217, 165, 74, 0.18); color: var(--warn); }
+.tier-HUMAN { background: rgba(217, 100, 90, 0.18); color: var(--bad); }
+
+.bound-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bound-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bound-bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+button.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+button.reject { background: var(--bad); }
+button + button { margin-left: 6px; }
+
+.row-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+
+textarea.edit-box {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 6px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 0.82rem;
+}
+
+#simulation-form {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+#simulation-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+#simulation-form input, #simulation-form select {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.metric-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.metric-card .label { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; }
+.metric-card .value { font-size: 1.2rem; margin-top: 4px; }
+
+#sim-plot {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: none;
+}
+#sim-plot.visible { display: block; }
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}

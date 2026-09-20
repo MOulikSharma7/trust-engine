@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trust Engine Dashboard</title>
+<link rel="stylesheet" href="/static/app/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Trust Engine Dashboard</h1>
+    <p class="subtitle">Adaptive Trust Engine for Governed Agent Workflows</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-header">
+        <h2>Approval queue</h2>
+        <button id="refresh-queue" class="secondary">Refresh</button>
+      </div>
+      <table id="queue-table">
+        <thead>
+          <tr>
+            <th>Action type</th>
+            <th>Tier</th>
+            <th>Severity hint</th>
+            <th>Content</th>
+            <th>Queued</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="queue-body">
+          <tr><td colspan="6" class="empty">Loading…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Rules &amp; trust state</h2>
+        <button id="refresh-rules" class="secondary">Refresh</button>
+      </div>
+      <table id="rules-table">
+        <thead>
+          <tr>
+            <th>Action type</th>
+            <th>Severity</th>
+            <th>Tier</th>
+            <th>Confidence bound</th>
+            <th>&alpha; / &beta;</th>
+            <th>Demotions</th>
+            <th>Last updated</th>
+          </tr>
+        </thead>
+        <tbody id="rules-body">
+          <tr><td colspan="7" class="empty">Loading…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Simulation</h2>
+      </div>
+      <form id="simulation-form">
+        <label>
+          Profile
+          <select id="sim-profile">
+            <option value="late_catch" selected>late_catch (promotion + demotion + recovery)</option>
+            <option value="consistent">consistent</option>
+            <option value="noisy">noisy</option>
+          </select>
+        </label>
+        <label>
+          Days
+          <input id="sim-days" type="number" value="90" min="1" max="365" />
+        </label>
+        <label>
+          Seed
+          <input id="sim-seed" type="number" value="6" />
+        </label>
+        <button type="submit">Run simulation</button>
+      </form>
+
+      <div id="sim-metrics" class="metrics"></div>
+      <img id="sim-plot" alt="Simulation autonomy curve will appear here after a run." />
+    </section>
+  </main>
+
+  <script src="/static/app/app.js"></script>
+</body>
+</html>
